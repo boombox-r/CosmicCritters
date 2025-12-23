@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "cosmic_critters",
+  "version": "${version}",
+  "name": "Cosmic Critters",
+  "description": "Makes it so piglins, piglin brutes, and hoglins dont zombify in the overworld.",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/cosmic_critters/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "boombox.cosmic_critters.client.Cosmic_crittersDataGenerator"
+    ],
+    "client": [
+      "boombox.cosmic_critters.client.Cosmic_crittersClient"
+    ],
+    "main": [
+      "boombox.cosmic_critters.Cosmic_critters"
+    ]
+  },
+  "mixins": [
+    "cosmic_critters.mixins.json",
+    {
+      "config": "cosmic_critters.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
